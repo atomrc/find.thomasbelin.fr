@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    div#container 
+        h1 Thomas Belin
+        h2 Developper @ 
+            a(href='http://www.doyoubuzz.com', target='_blank') DoYouBuzz
+        - for (var link in links)
+            a(href=links[link], target='_blank', id=link, class='link', data-x=500, data-y=100, data-size=300)= link
