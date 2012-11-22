@@ -12,7 +12,8 @@ define(
                 for(var i=0; i < links.length; i++) {
                     var link = links.item(i);
                     var phyElement = new PhysicalElement(link);
-                    phyElement.addForce(new Elastic(link.dataset.x, link.dataset.y, link.dataset.size));
+                    var elastic = new Elastic(link.dataset.x, link.dataset.y, link.dataset.size);
+                    phyElement.addForce(elastic);
                     phyElement.addForce(gravity);
                     phyElement.addForce(friction);
                     this.container.add(phyElement);

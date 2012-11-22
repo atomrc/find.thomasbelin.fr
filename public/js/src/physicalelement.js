@@ -7,6 +7,7 @@ define(
             this.element.classList.add('physical-element');
             this.speed = new Vect(0, 0);
             this.position = new Vect(0, 0);
+            this.forces = [];
         }
 
         PhysicalElement.prototype = {
@@ -41,8 +42,8 @@ define(
             },
 
             render: function() {
-                var deltaX = this.position.x;
-                var deltaY = this.position.y;
+                var deltaX = this.position.x.toFixed(2);
+                var deltaY = this.position.y.toFixed(2);
                 this.element.style.left = deltaX + 'px';
                 this.element.style.top = deltaY + 'px';
             }
