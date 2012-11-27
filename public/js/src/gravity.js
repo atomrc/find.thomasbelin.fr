@@ -1,7 +1,7 @@
 define(
     ['vect'],
     function(Vect) {
-        var gVect = new Vect(0, 0.98);
+        var gVect = new Vect(0, 9.8);
         var gravity = {
             acceleration : gVect,
 

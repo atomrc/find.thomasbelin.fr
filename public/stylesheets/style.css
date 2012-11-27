@@ -1,19 +1,32 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+body { 
+    background:url('/images/noise.png') #EEE; 
+    color:#666;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-h1, h2 { text-align: center }
+h1, h2 { text-align: center; text-shadow:0px 1px 0px white; }
 
-a {
-  color: #00B7FF;
-}
+a { color: #00B7FF; }
 
-#twitter { }
-#google { }
-#doyoubuzz { }
+#container { margin:auto; width:900px; height:500px;}
+/*#title { position: absolute; top:300px; left:0; width:100%; }*/
 
+/* default value for all the link */
+.link { top:0px; left:0px; display:block; height:64px; width:64px; text-align:center;}
 
-.elasto-container { position:relative; }
+/* CIRLCES 
+#twitter    { top:-50px; left:400px; }
+#googleplus { top:150px; left:150px; }
+#doyoubuzz  { top:150px; left:650px; }
+#linkedin   { top:350px; left:550px; }
+#github     { top:350px; left:300px; }
+*/
+
+#github     { top:-50px; left:200px; }
+#twitter    { top:-50px; left:400px; }
+#doyoubuzz  { top:-50px; left:600px; }
+#googleplus { top:50px;  left:300px; }
+#linkedin   { top:50px;  left:500px; }
+
+.elasto-container { position:relative; height:100%; width:100%; overflow:hidden; }
 
 .physical-element { position:absolute; }

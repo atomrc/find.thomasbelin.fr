@@ -2,8 +2,11 @@ extends layout
 
 block content
     div#container
-        h1 Thomas Belin
-        h2 Developper @ 
-            a(href='http://www.doyoubuzz.com', target='_blank') DoYouBuzz
-        - for (var link in links)
-            a(href=links[link]['url'], target='_blank', id=link, class='link', data-x=links[link]['position']['x'], data-y=links[link]['position']['y'], data-size=links[link]['size'])= link
+        div#title
+            h1 Thomas Belin
+            h2 Developper @ 
+                a(href='http://www.doyoubuzz.com', target='_blank') DoYouBuzz
+        div#physical-zone
+            - for (var link in links)
+                a(href=links[link]['url'], target='_blank', id=link, class='link '+links[link]['class'], title=link, data-size=links[link]['size'])
+                    img(src='/images/icons/' + link + '.png', alt=link, height=64, width=64)

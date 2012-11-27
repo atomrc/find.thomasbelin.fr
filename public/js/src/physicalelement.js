@@ -2,11 +2,11 @@ define(
     ['vect'],
     function(Vect) {
 
-        var PhysicalElement = function(domElement) {
+        var PhysicalElement = function(domElement, position) {
             this.element = domElement;
             this.element.classList.add('physical-element');
             this.speed = new Vect(0, 0);
-            this.position = new Vect(0, 0);
+            this.position = new Vect(position.x, position.y);
             this.forces = [];
         }
 
@@ -29,6 +29,11 @@ define(
                 this.forces.push(force);
             },
 
+            setPosition: function(position) {
+                this.position.x = position.x;
+                this.position.y = position.y;
+            },
+
             getPosition: function() {
                 return this.position;
             },
@@ -41,9 +46,9 @@ define(
                 this.speed.scale(vect);
             },
 
-            render: function() {
-                var deltaX = this.position.x.toFixed(2);
-                var deltaY = this.position.y.toFixed(2);
+            render: function(ratio) {
+                var deltaX = (this.position.x * ratio).toFixed(0);
+                var deltaY = (this.position.y * ratio).toFixed(0);
                 this.element.style.left = deltaX + 'px';
                 this.element.style.top = deltaY + 'px';
             }

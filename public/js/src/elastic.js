@@ -11,7 +11,7 @@ define(
             acceleration: null,
             position: null,
             size: 0,
-            rigidity: 0.001,
+            rigidity: 0.0001,
 
             update: function(elementPosition) {
                 var deltaX      = this.position.x - elementPosition.x;
