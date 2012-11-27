@@ -1,12 +1,11 @@
 define(
     ['physicalelement'],
     function(PhysicalElement) {
-        var ElastoDom = function(container, ratio) {
+        var ElastoDom = function(container) {
             this.container = container;
             this.height = parseInt(getComputedStyle(this.container, null).getPropertyValue('height'));
             this.width = parseInt(getComputedStyle(this.container, null).getPropertyValue('width'));
             this.container.classList.add('elasto-container');
-            this.ratio = ratio;
         }
 
         ElastoDom.prototype = {
@@ -16,9 +15,8 @@ define(
             elements: [],
 
             add: function(physicalElement) {
-                var randomX = parseInt(Math.random() * this.width) / this.ratio;
-                var randomY = 0; //parseInt(Math.random() * this.height) / this.ratio;
-                physicalElement.setPosition({x: randomX, y: randomY});
+                var randomX = parseInt(Math.random() * this.width);
+                physicalElement.setPosition({x: randomX, y: 0});
                 this.elements.push(physicalElement);
             },
 
@@ -32,7 +30,7 @@ define(
             render: function() {
                 for(var elIndex in this.elements) {
                     var element = this.elements[elIndex];
-                    element.render(this.ratio);
+                    element.render();
                 }
             }
         };

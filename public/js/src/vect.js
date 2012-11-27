@@ -13,8 +13,7 @@ define(
         }
 
         Vect.prototype.subtract = function(v) {
-            this.x -= v.x; 
-            this.y -= v.y;
+            return new Vect(this.x - v.x, this.y - v.y);
         }
 
         Vect.prototype.scale = function(v) {

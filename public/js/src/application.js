@@ -8,15 +8,14 @@ define(
             //launches the application
             init: function() {
                 this.rAF = requestAnimationFrame.bind(window);
-                var ratio = 0.1;
                 var container = document.getElementById('physical-zone');
-                this.container = new ElastoDom(container, ratio);
+                this.container = new ElastoDom(container);
                 var links = document.querySelectorAll('.link');
                 for(var i=0; i < links.length; i++) {
                     var link = links.item(i);
                     var phyElement = new PhysicalElement(link, {x:4000, y:2500});
-                    var elaX = parseInt(getComputedStyle(link, null).getPropertyValue('left')) / ratio;
-                    var elaY = parseInt(getComputedStyle(link, null).getPropertyValue('top')) / ratio;
+                    var elaX = parseInt(getComputedStyle(link, null).getPropertyValue('left'));
+                    var elaY = parseInt(getComputedStyle(link, null).getPropertyValue('top'));
                     var elastic = new Elastic(elaX, elaY, link.dataset.size);
                     phyElement.addForce(elastic);
                     phyElement.addForce(gravity);

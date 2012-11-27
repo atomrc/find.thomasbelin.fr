@@ -21,11 +21,11 @@ a { color: #00B7FF; }
 #github     { top:350px; left:300px; }
 */
 
-#github     { top:-50px; left:200px; }
-#twitter    { top:-50px; left:400px; }
-#doyoubuzz  { top:-50px; left:600px; }
-#googleplus { top:50px;  left:300px; }
-#linkedin   { top:50px;  left:500px; }
+#github     { background: url(/images/icons/github.png); top:-50px; left:200px; }
+#twitter    { background: url(/images/icons/twitter.png); top:-50px; left:400px; }
+#doyoubuzz  { background: url(/images/icons/doyoubuzz.png); top:-50px; left:600px; }
+#googleplus { background: url(/images/icons/googleplus.png); top:50px;  left:300px; }
+#linkedin   { background: url(/images/icons/linkedin.png); top:50px;  left:500px; }
 
 .elasto-container { position:relative; height:100%; width:100%; overflow:hidden; }
 
