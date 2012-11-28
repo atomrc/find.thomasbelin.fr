@@ -8,6 +8,7 @@ define(
             this.container.classList.add('elasto-container');
             this.elements = [];
             this.forces = [];
+            window.ondragstart = function() { return false; }
         }
 
         PhysicalContainer.prototype = {

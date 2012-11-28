@@ -8,7 +8,6 @@ define(
             this.size = options.size;
             if(options.rigidity) 
                 this.rigidity = options.rigidity;
-            console.log(this.position);
         }
 
         Elastic.prototype = Object.create(new Force(), {
