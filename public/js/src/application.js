@@ -1,6 +1,6 @@
 define(
-    ['elastodom', 'physicalelement', 'elastic', 'gravity', 'friction', 'requestanimationframe'],
-    function(ElastoDom, PhysicalElement, Elastic, gravity, friction, requestAnimationFrame) {
+    ['PhysicalContainer', 'PhysicalElement', 'Vect', 'Elastic', 'Gravity', 'Friction', 'requestanimationframe'],
+    function(PhysicalContainer, PhysicalElement, Vect, Elastic, Gravity, Friction, requestAnimationFrame) {
         //the object containing all the application
         var application = {
             container: null,
@@ -9,17 +9,21 @@ define(
             init: function() {
                 this.rAF = requestAnimationFrame.bind(window);
                 var container = document.getElementById('physical-zone');
-                this.container = new ElastoDom(container);
+                this.container = new PhysicalContainer(container);
+                this.container.addForce(new Gravity({acceleration: new Vect(0, 1)}));
+                this.container.addForce(new Friction({acceleration: new Vect(0.975, 0.975)}));
                 var links = document.querySelectorAll('.link');
                 for(var i=0; i < links.length; i++) {
                     var link = links.item(i);
-                    var phyElement = new PhysicalElement(link, {x:4000, y:2500});
-                    var elaX = parseInt(getComputedStyle(link, null).getPropertyValue('left'));
-                    var elaY = parseInt(getComputedStyle(link, null).getPropertyValue('top'));
-                    var elastic = new Elastic(elaX, elaY, link.dataset.size);
+                    var phyElement = new PhysicalElement(link, {x:4000, y:2500}),
+                        elaX = parseInt(getComputedStyle(link, null).getPropertyValue('left')),
+                        elaY = parseInt(getComputedStyle(link, null).getPropertyValue('top'));
+                    var elasticOption = {
+                        position: { x: elaX, y: elaY },
+                        size: link.dataset.size
+                    };
+                    var elastic = new Elastic(elasticOption);
                     phyElement.addForce(elastic);
-                    phyElement.addForce(gravity);
-                    phyElement.addForce(friction);
                     this.container.add(phyElement);
                 }
             },

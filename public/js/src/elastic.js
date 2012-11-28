@@ -1,19 +1,23 @@
 define(
-    ['vect'],
-    function(Vect) {
-        var Elastic = function(x, y, size) {
+    ['vect', 'Force'],
+    function(Vect, Force) {
+        var Elastic = function(options) {
+            Force.call(this, options);
             this.acceleration = new Vect(0, 0);
-            this.position = new Vect(x, y);
-            this.size = size;
+            this.position = options.position;
+            this.size = options.size;
+            if(options.rigidity) 
+                this.rigidity = options.rigidity;
+            console.log(this.position);
         }
 
-        Elastic.prototype = {
-            acceleration: null,
-            position: null,
-            size: 0,
-            rigidity: 0.001,
+        Elastic.prototype = Object.create(new Force(), {
+            position: {value: { x: 0, y: 0 }, writable:true},
+            size: {value: 0, writable:true},
+            rigidity: {value: 0.001, writable:true},
 
-            update: function(elementPosition) {
+            _compute: {value: function(physicalElement) {
+                var elementPosition = physicalElement.getPosition();
                 var deltaX      = this.position.x - elementPosition.x;
                 var deltaY      = this.position.y - elementPosition.y;
 
@@ -30,13 +34,8 @@ define(
 
                 this.acceleration.x = ratio * deltaX * this.rigidity;
                 this.acceleration.y = ratio * deltaY * this.rigidity;
-            },
-
-            apply: function(physicalElement) {
-                this.update(physicalElement.getPosition());
-                physicalElement.accelerate(this.acceleration);
-            }
-        }
+            }},
+        });
 
         return Elastic;
     }

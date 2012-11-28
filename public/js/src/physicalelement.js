@@ -1,5 +1,5 @@
 define(
-    ['vect'],
+    ['Vect'],
     function(Vect) {
 
         var PhysicalElement = function(domElement, position) {
@@ -53,12 +53,16 @@ define(
                 this.freezed = false;
             },
 
-            move: function() {
+            applyForce: function(force) {
                 if(!this.freezed) {
-                    for(var i in this.forces) {
-                        var force = this.forces[i];
-                        force.apply(this);
-                    }
+                    force.apply(this);
+                }
+            },
+
+            update: function() {
+                for(var i in this.forces) {
+                    var force = this.forces[i];
+                    this.applyForce(force);
                 }
                 this.position.add(this.speed);
             },

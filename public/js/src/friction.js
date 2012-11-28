@@ -1,15 +1,18 @@
 define(
-    ['vect'],
-    function(Vect) {
-        var scale = 0.975;
-        var frictionVect = new Vect(scale, scale);
-        var friction = {
-            frictionVect: frictionVect,
-            apply: function(physicalElement) {
-                physicalElement.applyFriction(this.frictionVect);
-            }
+    ['vect', 'Force'],
+    function(Vect, Force) {
+        var Elastic = function(options) {
+            Force.call(this, options);
+            this.acceleration = options.acceleration;
         }
 
-        return friction;
+        Elastic.prototype = Object.create(new Force(), {
+
+            _apply: {value: function(physicalElement) {
+                physicalElement.applyFriction(this.acceleration);
+            }},
+        });
+
+        return Elastic;
     }
 );
