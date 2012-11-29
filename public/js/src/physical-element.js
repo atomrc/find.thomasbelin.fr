@@ -1,5 +1,5 @@
 define(
-    ['Vect'],
+    ['vect'],
     function(Vect) {
 
         var PhysicalElement = function(domElement, position) {

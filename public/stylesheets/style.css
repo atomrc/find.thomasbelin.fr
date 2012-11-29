@@ -1,25 +1,28 @@
-body { 
-    background:url('/images/noise.png') #EEE; 
+body {
+    margin:0;
+    background:url('/images/noise.png') #EEE;
     color:#666;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
-h1, h2 { text-align: center; text-shadow:0px 1px 0px white; }
+a { color: #F06; }
 
-a { color: #00B7FF; }
+#header {
+    background:url('/images/tom.png') no-repeat center 5px ; /*background-color:#4D90FE;*/
+    padding-top:5px; height:70px; font-size:11pt; text-shadow:0px 1px 0px white;
+    position:relative;
+}
+#avatar { height:60px; border-radius:12px;  margin:0 10px; position:absolute; right:10px; top:0; }
+.container { margin:auto; width:900px; height:500px; position:relative; }
+#funbar { background: #666; height:100px; width:100%; }
 
-#container { margin:auto; width:900px; height:500px;}
-/*#title { position: absolute; top:300px; left:0; width:100%; }*/
+#header .container { width:700px; }
+#header h2 { font-size:12pt; }
+#header h1, 
+#header h2 { margin:0; }
 
 /* default value for all the link */
 .link { top:0px; left:0px; display:block; height:64px; width:64px; text-align:center;}
-
-/* CIRLCES 
-#twitter    { top:-50px; left:400px; }
-#googleplus { top:150px; left:150px; }
-#doyoubuzz  { top:150px; left:650px; }
-#linkedin   { top:350px; left:550px; }
-#github     { top:350px; left:300px; }
-*/
 
 #github     { background: url(/images/icons/github.png); top:-50px; left:200px; }
 #twitter    { background: url(/images/icons/twitter.png); top:-50px; left:400px; }

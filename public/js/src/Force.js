@@ -1,5 +1,5 @@
 define(
-    ['Vect'],
+    ['vect'],
     function(Vect) {
         var Force = function(options) {
             this.options = options;

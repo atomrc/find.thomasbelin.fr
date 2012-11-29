@@ -1,5 +1,5 @@
 define(
-    ['PhysicalContainer', 'PhysicalElement', 'Vect', 'Elastic', 'Gravity', 'Friction', 'requestanimationframe'],
+    ['physical-container', 'physical-element', 'vect', 'elastic', 'gravity', 'friction', 'requestanimationframe'],
     function(PhysicalContainer, PhysicalElement, Vect, Elastic, Gravity, Friction, requestAnimationFrame) {
         //the object containing all the application
         var application = {

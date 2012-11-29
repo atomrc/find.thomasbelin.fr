@@ -16,5 +16,15 @@ html
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
 
+
   body
-    block content
+    div#header
+        div.container
+            h1 Thomas Belin
+            h2 Developper @ 
+                a(href='http://www.doyoubuzz.com', target='_blank') DoYouBuzz
+            img(src='/images/avatar.jpeg', alt='Thomas Belin', id='avatar')
+    div#main
+        block main
+
+    div#footer

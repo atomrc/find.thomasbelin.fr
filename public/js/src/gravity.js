@@ -1,5 +1,5 @@
 define(
-    ['Vect', 'Force'],
+    ['vect', 'force'],
     function(Vect, Force) {
         var Gravity = function (options) {
             Force.call(this, options);

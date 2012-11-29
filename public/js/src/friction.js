@@ -1,5 +1,5 @@
 define(
-    ['vect', 'Force'],
+    ['vect', 'force'],
     function(Vect, Force) {
         var Elastic = function(options) {
             Force.call(this, options);

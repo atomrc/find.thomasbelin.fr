@@ -1,5 +1,5 @@
 define(
-    ['Vect', 'physicalElement'],
+    ['vect', 'physical-element'],
     function(Vect, PhysicalElement) {
         var PhysicalContainer = function(container) {
             this.container = container;
