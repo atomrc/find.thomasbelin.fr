@@ -1,7 +1,7 @@
 requirejs.config({
     baseUrl: 'js/src',
     paths: {
-        app: ''
+        phygine: '../lib/phygine'
     }
 });
 
