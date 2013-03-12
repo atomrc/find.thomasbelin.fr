@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "tomfont";
+    src: url('/font/Tomfont-Regular.ttf');
+}
+
 body {
     margin:0;
     background:url('/images/noise.png') #EEE;
@@ -22,14 +27,45 @@ a { color: #F06; }
 #header h2 { margin:0; }
 
 /* default value for all the link */
-.link { top:0px; left:0px; display:block; height:64px; width:64px; text-align:center;}
+.link { top:0px; left:0px; display:block; height:64px; width:64px; text-align:center; font-family: tomfont; font-size: 100px; text-decoration: none; }
 
-#github     { background: url(/images/icons/github.png); top:-50px; left:200px; }
-#twitter    { background: url(/images/icons/twitter.png); top:-50px; left:400px; }
-#doyoubuzz  { background: url(/images/icons/doyoubuzz.png); top:-50px; left:600px; }
-#googleplus { background: url(/images/icons/googleplus.png); top:50px;  left:300px; }
-#linkedin   { background: url(/images/icons/linkedin.png); top:50px;  left:500px; }
+#blog   {
+    color: rgba(236, 70, 0, 1);
+    top:-50px; left:200px;
+}
+#blog:after { content: 'r' }
 
-.elasto-container { position:relative; height:100%; width:100%; overflow:hidden; }
+#github     {
+    color: rgba(57, 223 ,255, 1);
+    top:50px;  left:400px;
+}
+#github:after     { content: 'e'; }
+
+#twitter    {
+    color: rgba(19, 157, 233, 1);
+    top:-50px; left:400px;
+}
+#twitter:after { content: 'l'; }
+
+#doyoubuzz  {
+    color: rgba(255, 136, 0, 1);
+    top:50px;  left:200px;
+}
+#doyoubuzz:after  { content: 'd'; }
+
+#googleplus {
+    color: rgba(212, 11, 13, 1);
+    top:-50px; left:600px;
+}
+#googleplus:after { content: 'g' }
+
+#linkedin   {
+    color: rgba(14, 110, 162, 1);
+    top:50px;  left:600px;
+}
+#linkedin:after { content: 'i' }
+
+
+.elasto-container { position:relative; height:100%; width:100%; }
 
 .physical-element { position:absolute; }
