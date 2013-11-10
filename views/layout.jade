@@ -4,7 +4,6 @@ html
     meta(charset='UTF-8')
     title Thomas Belin
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/js/lib/require.js', data-main='js/main.js')
     script
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-36569418-1']);
@@ -28,3 +27,6 @@ html
         block main
 
     div#footer
+
+    script(src='/js/lib/phygine.js')
+    script(src='/js/src/application.js')

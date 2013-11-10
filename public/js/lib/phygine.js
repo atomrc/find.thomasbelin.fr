@@ -189,7 +189,7 @@ var Phygine = {};
         this.element = domElement;
         this.speed = new Vect(0, 0);
         this.position = {};
-        if(position) {
+        if (position) {
             this.position = new Vect(position.x, position.y);
         } else {
             this._computePosition();
@@ -287,10 +287,14 @@ var Phygine = {};
         },
 
         render: function () {
-            var deltaX = this.position.x.toFixed(0),
-                deltaY = this.position.y.toFixed(0);
-            this.element.style.left = deltaX + 'px';
-            this.element.style.top = deltaY + 'px';
+            var deltaX = Math.abs(this.speed.x) > 0.001 ? this.position.x.toFixed(0) : null,
+                deltaY = Math.abs(this.speed.y) > 0.001 ? this.position.y.toFixed(0) : null;
+            if (deltaX !== null) {
+                this.element.style.left = deltaX + 'px';
+            }
+            if (deltaY !== null) {
+                this.element.style.top = deltaY + 'px';
+            }
         }
     };
 

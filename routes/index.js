@@ -21,7 +21,7 @@ exports.index = function(req, res){
             size: 20
         },
         'googleplus' : {
-            url: 'https://plus.google.com/118010420630912086698',
+            url: 'https://plus.google.com/118010420630912086698?rel=author',
             size: 20
         },
         'blog' : {
