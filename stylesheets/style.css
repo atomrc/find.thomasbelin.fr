@@ -1,11 +1,11 @@
 @font-face {
     font-family: "tomfont";
-    src: url('font/Tomfont-Regular.ttf');
+    src: url('../font/Tomfont-Regular.ttf');
 }
 
 body {
     margin:0;
-    background:url('images/noise.png') #EEE;
+    background:url('../images/noise.png') #EEE;
     color:#666;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -13,7 +13,7 @@ body {
 a { color: #F06; }
 
 #header {
-    background:url('images/tom.png') no-repeat center 5px ; /*background-color:#4D90FE;*/
+    background:url('../images/tom.png') no-repeat center 5px ; /*background-color:#4D90FE;*/
     padding-top:5px; height:70px; font-size:11pt; text-shadow:0px 1px 0px white;
     position:relative;
 }
