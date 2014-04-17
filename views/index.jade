@@ -1,7 +1,0 @@
-extends layout
-
-block main
-        div.container
-            div#physical-zone
-                - for (var link in links)
-                    a(href=links[link]['url'], target='_blank', id=link, class='link', title=link, data-size=links[link]['size'])
