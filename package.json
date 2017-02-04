@@ -4,7 +4,14 @@
   "description": "Don't mind me, I am just applying forces to links",
   "main": "application.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages-deploy",
+    "build": "webpack"
+  },
+  "gh-pages-deploy": {
+    "cname": "find.thomasbelin.fr",
+    "prep": [
+      "build"
+    ]
   },
   "repository": {
     "type": "git",
@@ -24,6 +31,7 @@
     "@cycle/dom": "^14.3.0",
     "@cycle/time": "^0.3.1",
     "@cycle/xstream-run": "^4.2.0",
+    "gh-pages-deploy": "^0.4.2",
     "json-loader": "^0.5.4",
     "xstream": "^10.2.0"
   },
