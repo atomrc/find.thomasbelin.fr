@@ -1,6 +1,6 @@
 import { run } from "@cycle/xstream-run"
 import { timeDriver } from "@cycle/time"
-import { makeDOMDriver, a, div } from "@cycle/dom"
+import { makeDOMDriver, a, div, img } from "@cycle/dom"
 
 const  links = require("./links.json")
 
@@ -81,22 +81,20 @@ function render(links) {
       attrs: {
         class: "link",
         title: link.title,
-        href: link.link,
-        id: link.id
+        href: link.link
       },
       style: {
         display: "block",
         transform: `translate(${link.position.x}px, ${link.position.y}px)`
       }
-    }))
+    }, [img({ attrs: { src: link.image }})]))
 
   return div(vnodes)
 }
 
-function main(sources) {
+function main({ time }) {
   return {
-    DOM: sources
-      .time
+    DOM: time
       .animationFrames()
       .fold(updateState, links)
       .map(render)

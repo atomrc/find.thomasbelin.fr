@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "tomfont";
-  src: url('../font/Tomfont-Regular.ttf');
-}
-
 body {
   margin:0;
   background:url('../images/noise.png') #EEE;
@@ -32,30 +27,11 @@ a { color: #F06; }
   top:0px;
   left:0px;
   display:block;
-  height:64px;
-  width:64px;
   text-align:center;
   font-family: tomfont;
   font-size: 100px;
   text-decoration: none;
 }
-
-#blog   {
-  color: rgba(236, 70, 0, 1);
+.link img {
+  height: 0.75em;
 }
-#blog:after { content: 'r' }
-
-#github     {
-  color: rgba(57, 223 ,255, 1);
-}
-#github:after     { content: 'e'; }
-
-#twitter    {
-  color: rgba(19, 157, 233, 1);
-}
-#twitter:after { content: 'l'; }
-
-#doyoubuzz  {
-  color: rgba(255, 136, 0, 1);
-}
-#doyoubuzz:after  { content: 'd'; }
