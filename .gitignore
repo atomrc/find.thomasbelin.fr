@@ -1,5 +1,2 @@
-/node_modules
-*.swp
-.DS_Store
-/.afignore
-
+/dist
+node_modules
