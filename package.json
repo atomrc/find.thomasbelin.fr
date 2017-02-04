@@ -1,0 +1,35 @@
+{
+  "name": "find.thomasbelin.fr",
+  "version": "1.0.0",
+  "description": "Don't mind me, I am just applying forces to links",
+  "main": "application.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomrc/find.thomasbelin.fr.git"
+  },
+  "keywords": [
+    "cyclejs",
+    "cyclejs-time"
+  ],
+  "author": "Thomas Belin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atomrc/find.thomasbelin.fr/issues"
+  },
+  "homepage": "https://github.com/atomrc/find.thomasbelin.fr#readme",
+  "dependencies": {
+    "@cycle/dom": "^14.3.0",
+    "@cycle/time": "^0.3.1",
+    "@cycle/xstream-run": "^4.2.0",
+    "json-loader": "^0.5.4",
+    "xstream": "^10.2.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.5",
+    "webpack": "^2.2.1"
+  }
+}
