@@ -5,12 +5,14 @@
   "main": "application.js",
   "scripts": {
     "deploy": "gh-pages-deploy",
-    "build": "webpack"
+    "build": "webpack",
+    "cleansrc": "rimraf README.md src webpack.config.js yarn.lock package.json .editorconfig package.json tsconfig.json"
   },
   "gh-pages-deploy": {
     "cname": "find.thomasbelin.fr",
     "prep": [
-      "build"
+      "build",
+      "cleansrc"
     ]
   },
   "repository": {
@@ -33,6 +35,7 @@
     "@cycle/xstream-run": "^4.2.0",
     "gh-pages-deploy": "^0.4.2",
     "json-loader": "^0.5.4",
+    "rimraf": "^2.5.4",
     "xstream": "^10.2.0"
   },
   "devDependencies": {
