@@ -1,3 +1,4 @@
+require("../scss/application.scss");
 import { run } from "@cycle/xstream-run"
 import { timeDriver } from "@cycle/time"
 import { makeDOMDriver, a, div, img } from "@cycle/dom"

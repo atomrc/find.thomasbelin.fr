@@ -14,7 +14,7 @@
     ],
     "link": "https://github.com/atomrc",
     "title": "Where I push code",
-    "image": "/images/github.svg"
+    "image": "/dist/images/github.svg"
   },
   {
     "position": {
@@ -31,7 +31,7 @@
     ],
     "link": "https://twitter.com/atomrc",
     "title": "Where I tweet and exchange with the world",
-    "image": "/images/twitter.svg"
+    "image": "/dist/images/twitter.svg"
   },
   {
     "position": {
@@ -48,7 +48,7 @@
     ],
     "link": "https://blog.thomasbelin.fr",
     "title": "Where I (sometime) share my experiences with the world",
-    "image": "/images/blog.svg"
+    "image": "/dist/images/blog.svg"
   },
   {
     "position": {
@@ -65,6 +65,6 @@
     ],
     "link": "http://thomas-belin.com",
     "title": "My DoYouBuzz's resume",
-    "image": "/images/doyoubuzz.svg"
+    "image": "/dist/images/doyoubuzz.svg"
   }
 ]
