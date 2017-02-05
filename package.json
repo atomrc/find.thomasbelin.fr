@@ -5,7 +5,7 @@
   "main": "application.js",
   "scripts": {
     "deploy": "gh-pages-deploy",
-    "build": "webpack",
+    "build": "webpack -p --progress",
     "cleansrc": "rimraf README.md src webpack.config.js yarn.lock package.json .editorconfig package.json tsconfig.json"
   },
   "gh-pages-deploy": {
