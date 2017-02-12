@@ -2,6 +2,7 @@ require("../scss/application.scss");
 import { run } from "@cycle/run"
 import { timeDriver } from "@cycle/time"
 import { makeDOMDriver, a, div, img } from "@cycle/dom"
+import sampleCombine from "xstream/extra/sampleCombine"
 
 const  links = require("./links.json")
 
@@ -93,10 +94,20 @@ function render(links) {
   return div(vnodes)
 }
 
-function main({ time }) {
+function main({ time, DOM }) {
+
+  const raf$ = time.animationFrames()
+
+  const pause$ = DOM
+    .select("document")
+    .events("keyup")
+    .filter(event => event.keyCode == 32)
+    .fold(acc => !acc, false)
+
   return {
-    DOM: time
-      .animationFrames()
+    DOM: raf$
+      .compose(sampleCombine(pause$))
+      .filter(([_, paused]) => !paused)
       .fold(updateState, links)
       .map(render)
   }

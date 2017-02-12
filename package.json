@@ -41,7 +41,8 @@
     "rimraf": "^2.5.4",
     "sass-loader": "^5.0.1",
     "svgo": "^0.7.2",
-    "url-loader": "^0.5.7"
+    "url-loader": "^0.5.7",
+    "xstream": "^10.2.0"
   },
   "devDependencies": {
     "ts-loader": "^2.0.0",

@@ -3149,7 +3149,7 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
-xstream@*, xstream@10.x:
+xstream@*, xstream@10.x, xstream@^10.2.0:
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/xstream/-/xstream-10.2.0.tgz#c121f3f67b34a921f473dd2b596f01ab4646f957"
   dependencies:
